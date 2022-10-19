@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <title>Meditation #3</title>
+
+  <h3 id="h3">Type the RGB value of your clothes and see whether you can be friends:</h3>
+  <a href="https://g.co/kgs/JwVUkD">Don't know the value? Click here </a>
+
+<p>R
+<input type="text" id="R1" /><br>
+<p>G
+<input type="text" id="G1" /><br>
+<p>B
+<input type="text" id="B1" /><br>
+
+<br>
+<p>R
+<input type="text" id="R2" /><br>
+<p>G
+<input type="text" id="G2" /><br>
+<p>B
+<input type="text" id="B2" /><br>
+
+<br>
+<input type="button" onClick="colorContrast()" Value="Contrast" />
+
+<p>The Result is : <br>
+<span id = "result"></span>
+<br>
+<span id = "interpretation"></span>
+
+  <script>
+    // function changeHexaToRgba() {
+    //   h3.style.color = input1.value;
+    //   input2.value = h3.style.color;
+    // }
+    // changeHexaToRgba();
+
+    function colorContrast()
+    {
+            num1 = document.getElementById("R1").value;
+            num2 = document.getElementById("G1").value;
+            num3 = document.getElementById("B1").value;
+            num4 = document.getElementById("R2").value;
+            num5 = document.getElementById("G2").value;
+            num6 = document.getElementById("B2").value;
+// let a = Math.max(num1, num4);
+// let b = Math.min(num1, num4);
+// let c = Math.max(num2, num5);
+// let d = Math.min(num2, num5);
+// let e = Math.max(num3, num6);
+// let f = Math.min(num3, num6);
+l1 = 0.2126 * num1 + 0.7152 * num2 + 0.0722 * num3 + 0.05;
+l2 = 0.2126 * num4 + 0.7152 * num5 + 0.0722 * num6 + 0.05;
+document.getElementById("result").innerHTML = (l1 + 0.05) / (l2 + 0.05);
+
+console.log (l1);
+console.log (l2);
+console.log ("Relative:" + (l1 + 0.05) / (l2 + 0.05));
+
+if (result > 4.5){
+  document.getElementById("interpretation").innerHTML = "Too much difference in personality and taste! Not a good match for a friend."
+} else{
+  document.getElementById("interpretation").innerHTML = "Look like you could be friends!"
+}
+
+    }
+  </script>
+</body>
+
+<style>
+h3 {
+  font-family: "Helvetica"
+}
+
+p {
+  font-family: "Helvetica"
+}
+
+a {
+  font-family: "Helvetica"
+}
+
+
+button {
+  font-family: "Helvetica"
+}
+</style>
+
+</html>
